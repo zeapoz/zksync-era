@@ -7,11 +7,10 @@ message SnapshotStorageLogsChunk {
 }
 
 message SnapshotStorageLog {
-    optional bytes account_address = 1; // required; H160
-    optional bytes storage_key = 2; // required; H256
-    optional bytes storage_value = 3; // required; H256
-    optional uint32 l1_batch_number_of_initial_write = 4; // required
-    optional uint64 enumeration_index = 5; // required
+    optional bytes hashed_key = 1; // required; H256
+    optional bytes storage_value = 2; // required; H256
+    optional uint32 l1_batch_number_of_initial_write = 3; // required
+    optional uint64 enumeration_index = 4; // required
 }
 
 message SnapshotFactoryDependencies {

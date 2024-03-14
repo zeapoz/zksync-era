@@ -137,8 +137,8 @@ CREATE TABLE storage_logs
 (
     id BIGSERIAL PRIMARY KEY,
     raw_key BYTEA NOT NULL,
-    address BYTEA NOT NULL,
-    key BYTEA NOT NULL,
+    address BYTEA,
+    key BYTEA,
     value BYTEA NOT NULL,
     operation_number INT NOT NULL,
     tx_hash BYTEA NOT NULL,

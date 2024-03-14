@@ -78,7 +78,7 @@ impl StorageLogsDal<'_, '_> {
             .conn()
             .copy_in_raw(
                 "COPY storage_logs(
-                    hashed_key, address, key, value, operation_number, tx_hash, miniblock_number,
+                    hashed_key, value, operation_number, tx_hash, miniblock_number,
                     created_at, updated_at
                 )
                 FROM STDIN WITH (DELIMITER '|')",
@@ -90,10 +90,8 @@ impl StorageLogsDal<'_, '_> {
         for log in snapshot_storage_logs.iter() {
             write_str!(
                 &mut buffer,
-                r"\\x{hashed_key:x}|\\x{address:x}|\\x{key:x}|\\x{value:x}|",
-                hashed_key = log.key.hashed_key(),
-                address = log.key.address(),
-                key = log.key.key(),
+                r"\\x{hashed_key:x}|\\x{value:x}|",
+                hashed_key = log.hashed_key,
                 value = log.value
             );
             writeln_str!(
@@ -390,8 +388,10 @@ impl StorageLogsDal<'_, '_> {
 
         let touched_slots = rows.into_iter().map(|row| {
             let key = StorageKey::new(
-                AccountTreeId::new(Address::from_slice(&row.address)),
-                H256::from_slice(&row.key),
+                AccountTreeId::new(Address::from_slice(
+                    &row.address.expect("attempted to access null address"),
+                )),
+                H256::from_slice(&row.key.expect("attempted to access null key")),
             );
             (key, H256::from_slice(&row.value))
         });
@@ -618,8 +618,8 @@ impl StorageLogsDal<'_, '_> {
         rows.into_iter()
             .map(|row| DbStorageLog {
                 hashed_key: H256::from_slice(&row.hashed_key),
-                address: H160::from_slice(&row.address),
-                key: H256::from_slice(&row.key),
+                address: row.address.map(|a| H160::from_slice(&a)),
+                key: row.key.map(|k| H256::from_slice(&k)),
                 value: H256::from_slice(&row.value),
                 operation_number: row.operation_number as u64,
                 tx_hash: H256::from_slice(&row.tx_hash),

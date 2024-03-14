@@ -123,10 +123,11 @@ impl SnapshotsCreatorDal<'_, '_> {
         .await?
         .iter()
         .map(|row| SnapshotStorageLog {
-            key: StorageKey::new(
+            hashed_key: StorageKey::new(
                 AccountTreeId::new(Address::from_slice(&row.address)),
                 H256::from_slice(&row.key),
-            ),
+            )
+            .hashed_key(),
             value: H256::from_slice(&row.value),
             l1_batch_number_of_initial_write: L1BatchNumber(row.l1_batch_number as u32),
             enumeration_index: row.index as u64,
@@ -262,7 +263,7 @@ mod tests {
             .unwrap();
         assert_eq!(all_logs.len(), expected_logs.len());
         for (log, expected_log) in all_logs.iter().zip(expected_logs) {
-            assert_eq!(log.key, expected_log.key);
+            assert_eq!(log.hashed_key, expected_log.key.hashed_key());
             assert_eq!(log.value, expected_log.value);
             assert_eq!(log.l1_batch_number_of_initial_write, l1_batch_number);
         }
@@ -277,7 +278,7 @@ mod tests {
                     .unwrap();
                 assert_eq!(logs.len(), chunk.len());
                 for (log, expected_log) in logs.iter().zip(chunk) {
-                    assert_eq!(log.key, expected_log.key);
+                    assert_eq!(log.hashed_key, expected_log.key.hashed_key());
                     assert_eq!(log.value, expected_log.value);
                 }
             }
@@ -331,7 +332,7 @@ mod tests {
             .await
             .unwrap();
         assert_eq!(logs.len(), 1);
-        assert_eq!(logs[0].key, key);
+        assert_eq!(logs[0].hashed_key, key.hashed_key());
         assert_eq!(logs[0].value, real_write.value);
         assert_eq!(logs[0].l1_batch_number_of_initial_write, L1BatchNumber(2));
     }

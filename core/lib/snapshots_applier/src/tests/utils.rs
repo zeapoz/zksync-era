@@ -9,13 +9,12 @@ use zksync_types::{
     block::L1BatchHeader,
     commitment::{L1BatchMetaParameters, L1BatchMetadata, L1BatchWithMetadata},
     snapshots::{
-        SnapshotFactoryDependencies, SnapshotFactoryDependency, SnapshotHeader,
+        HashedKey, SnapshotFactoryDependencies, SnapshotFactoryDependency, SnapshotHeader,
         SnapshotRecoveryStatus, SnapshotStorageLog, SnapshotStorageLogsChunk,
         SnapshotStorageLogsChunkMetadata, SnapshotStorageLogsStorageKey,
     },
     tokens::{TokenInfo, TokenMetadata},
-    AccountTreeId, Address, Bytes, L1BatchNumber, MiniblockNumber, ProtocolVersionId, StorageKey,
-    StorageValue, H160, H256,
+    Address, Bytes, L1BatchNumber, MiniblockNumber, ProtocolVersionId, StorageValue, H256,
 };
 use zksync_web3_decl::error::EnrichedClientResult;
 
@@ -159,10 +158,7 @@ pub(super) fn random_storage_logs(
 ) -> Vec<SnapshotStorageLog> {
     (0..count)
         .map(|i| SnapshotStorageLog {
-            key: StorageKey::new(
-                AccountTreeId::from_fixed_bytes(H160::random().to_fixed_bytes()),
-                H256::random(),
-            ),
+            hashed_key: HashedKey::random(),
             value: StorageValue::random(),
             l1_batch_number_of_initial_write: l1_batch_number,
             enumeration_index: i + 1,

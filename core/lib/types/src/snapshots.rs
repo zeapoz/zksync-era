@@ -2,13 +2,13 @@ use std::{convert::TryFrom, ops};
 
 use anyhow::Context;
 use serde::{Deserialize, Serialize};
-use zksync_basic_types::{AccountTreeId, L1BatchNumber, MiniblockNumber, H256};
+use zksync_basic_types::{L1BatchNumber, MiniblockNumber, H256};
 use zksync_protobuf::{required, ProtoFmt};
 use zksync_utils::u256_to_h256;
 
-use crate::{
-    commitment::L1BatchWithMetadata, Bytes, ProtocolVersionId, StorageKey, StorageValue, U256,
-};
+use crate::{commitment::L1BatchWithMetadata, Bytes, ProtocolVersionId, StorageValue, U256};
+
+pub type HashedKey = H256;
 
 /// Information about all snapshots persisted by the node.
 #[derive(Debug, Clone, Serialize, Deserialize)]
@@ -73,7 +73,7 @@ pub struct SnapshotStorageLogsChunk {
 
 #[derive(Debug, Clone, PartialEq, Eq, Hash)]
 pub struct SnapshotStorageLog {
-    pub key: StorageKey,
+    pub hashed_key: HashedKey,
     pub value: StorageValue,
     pub l1_batch_number_of_initial_write: L1BatchNumber,
     pub enumeration_index: u64,
@@ -133,16 +133,9 @@ impl ProtoFmt for SnapshotStorageLog {
 
     fn read(r: &Self::Proto) -> anyhow::Result<Self> {
         Ok(Self {
-            key: StorageKey::new(
-                AccountTreeId::new(
-                    required(&r.account_address)
-                        .and_then(|bytes| Ok(<[u8; 20]>::try_from(bytes.as_slice())?.into()))
-                        .context("account_address")?,
-                ),
-                required(&r.storage_key)
-                    .and_then(|bytes| Ok(<[u8; 32]>::try_from(bytes.as_slice())?.into()))
-                    .context("storage_key")?,
-            ),
+            hashed_key: required(&r.hashed_key)
+                .and_then(|bytes| Ok(<[u8; 32]>::try_from(bytes.as_slice())?.into()))
+                .context("hashed_key")?,
             value: required(&r.storage_value)
                 .and_then(|bytes| Ok(<[u8; 32]>::try_from(bytes.as_slice())?.into()))
                 .context("storage_value")?,
@@ -156,8 +149,7 @@ impl ProtoFmt for SnapshotStorageLog {
 
     fn build(&self) -> Self::Proto {
         Self::Proto {
-            account_address: Some(self.key.address().as_bytes().into()),
-            storage_key: Some(self.key.key().as_bytes().into()),
+            hashed_key: Some(self.hashed_key.as_bytes().into()),
             storage_value: Some(self.value.as_bytes().into()),
             l1_batch_number_of_initial_write: Some(self.l1_batch_number_of_initial_write.0),
             enumeration_index: Some(self.enumeration_index),
