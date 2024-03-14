@@ -1,0 +1,466 @@
+yarn run v1.22.19
+$ yarn workspace snapshot-recovery-test snapshot-recovery-test
+$ mocha tests/snapshot-recovery.test.ts
+
+
+  snapshot recovery
+    ✔ create snapshot (2808ms)
+Obtained all snapshots { snapshotsL1BatchNumbers: [ 24 ] }
+Obtained latest snapshot {
+  l1BatchNumber: 24,
+  miniblockNumber: 88,
+  storageLogsChunks: [
+    {
+      chunkId: 0,
+      filepath: 'artifacts/storage_logs_snapshots/snapshot_l1_batch_24_storage_logs_part_0000.proto.gzip'
+    },
+    {
+      chunkId: 1,
+      filepath: 'artifacts/storage_logs_snapshots/snapshot_l1_batch_24_storage_logs_part_0001.proto.gzip'
+    },
+    {
+      chunkId: 2,
+      filepath: 'artifacts/storage_logs_snapshots/snapshot_l1_batch_24_storage_logs_part_0002.proto.gzip'
+    },
+    {
+      chunkId: 3,
+      filepath: 'artifacts/storage_logs_snapshots/snapshot_l1_batch_24_storage_logs_part_0003.proto.gzip'
+    },
+    {
+      chunkId: 4,
+      filepath: 'artifacts/storage_logs_snapshots/snapshot_l1_batch_24_storage_logs_part_0004.proto.gzip'
+    },
+    {
+      chunkId: 5,
+      filepath: 'artifacts/storage_logs_snapshots/snapshot_l1_batch_24_storage_logs_part_0005.proto.gzip'
+    },
+    {
+      chunkId: 6,
+      filepath: 'artifacts/storage_logs_snapshots/snapshot_l1_batch_24_storage_logs_part_0006.proto.gzip'
+    },
+    {
+      chunkId: 7,
+      filepath: 'artifacts/storage_logs_snapshots/snapshot_l1_batch_24_storage_logs_part_0007.proto.gzip'
+    },
+    {
+      chunkId: 8,
+      filepath: 'artifacts/storage_logs_snapshots/snapshot_l1_batch_24_storage_logs_part_0008.proto.gzip'
+    },
+    {
+      chunkId: 9,
+      filepath: 'artifacts/storage_logs_snapshots/snapshot_l1_batch_24_storage_logs_part_0009.proto.gzip'
+    }
+  ],
+  factoryDepsFilepath: 'artifacts/storage_logs_snapshots/snapshot_l1_batch_24_factory_deps.proto.gzip',
+  lastL1BatchWithMetadata: {
+    header: {
+      number: 24,
+      timestamp: 1710438144,
+      l1_tx_count: 7,
+      l2_tx_count: 38,
+      priority_ops_onchain_data: [Array],
+      l2_to_l1_logs: [Array],
+      l2_to_l1_messages: [Array],
+      bloom: '0x00000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000000',
+      used_contract_hashes: [Array],
+      base_system_contracts_hashes: [Object],
+      system_logs: [Array],
+      protocol_version: 'Version21',
+      pubdata_input: [Array]
+    },
+    metadata: {
+      root_hash: '0x4230caa86f230115d8ca706e00d2be689104b987875eefb9c59d5b41f39e8ee4',
+      rollup_last_leaf_index: 8151,
+      merkle_root_hash: '0x4230caa86f230115d8ca706e00d2be689104b987875eefb9c59d5b41f39e8ee4',
+      initial_writes_compressed: null,
+      repeated_writes_compressed: null,
+      commitment: '0x2477780bb73058e8f58f008adb151b110ec9704b2e18223e56a99616ad1fd1a6',
+      l2_l1_merkle_root: '0x02d458c9df0fa4c9c7b98109fecd607a066a8f0a77a1e4ecac972d368ac407af',
+      block_meta_params: [Object],
+      aux_data_hash: '0xe27c9cfbab661fb3520c5de468c38ea666872dee7dda3d1f46077e42af13a515',
+      meta_parameters_hash: '0xfc77f1a775b6916c3cbcfd173193a57bf6a87a9d319ac26c7a9d12ae3f5d02c9',
+      pass_through_data_hash: '0xb76418ea1c40ed230009e8234283d6bc901fa3005230f77394cc5449a8e3c14f',
+      events_queue_commitment: '0x1bdfbfb698daee2276454ef287296597c65fc46c0d6437f96761a2439849a36a',
+      bootloader_initial_content_commitment: '0xde7f170f8f145d2d31b59e76555053aaee4e523e15fd6d9662375df3c17c9881',
+      state_diffs_compressed: [Array]
+    },
+    raw_published_factory_deps: []
+  }
+}
+Checking storage logs chunk /Users/jonathan.andersson/Programming/zksync-era/artifacts/storage_logs_snapshots/snapshot_l1_batch_24_storage_logs_part_0000.proto.gzip
+Decompressed chunk has 831 logs
+Checked random 81 logs in the chunk
+Checking storage logs chunk /Users/jonathan.andersson/Programming/zksync-era/artifacts/storage_logs_snapshots/snapshot_l1_batch_24_storage_logs_part_0001.proto.gzip
+Decompressed chunk has 874 logs
+Checked random 87 logs in the chunk
+Checking storage logs chunk /Users/jonathan.andersson/Programming/zksync-era/artifacts/storage_logs_snapshots/snapshot_l1_batch_24_storage_logs_part_0002.proto.gzip
+Decompressed chunk has 846 logs
+Checked random 87 logs in the chunk
+Checking storage logs chunk /Users/jonathan.andersson/Programming/zksync-era/artifacts/storage_logs_snapshots/snapshot_l1_batch_24_storage_logs_part_0003.proto.gzip
+Decompressed chunk has 802 logs
+Checked random 81 logs in the chunk
+Checking storage logs chunk /Users/jonathan.andersson/Programming/zksync-era/artifacts/storage_logs_snapshots/snapshot_l1_batch_24_storage_logs_part_0004.proto.gzip
+Decompressed chunk has 797 logs
+Checked random 73 logs in the chunk
+Checking storage logs chunk /Users/jonathan.andersson/Programming/zksync-era/artifacts/storage_logs_snapshots/snapshot_l1_batch_24_storage_logs_part_0005.proto.gzip
+Decompressed chunk has 804 logs
+Checked random 91 logs in the chunk
+Checking storage logs chunk /Users/jonathan.andersson/Programming/zksync-era/artifacts/storage_logs_snapshots/snapshot_l1_batch_24_storage_logs_part_0006.proto.gzip
+Decompressed chunk has 762 logs
+Checked random 68 logs in the chunk
+Checking storage logs chunk /Users/jonathan.andersson/Programming/zksync-era/artifacts/storage_logs_snapshots/snapshot_l1_batch_24_storage_logs_part_0007.proto.gzip
+Decompressed chunk has 824 logs
+Checked random 69 logs in the chunk
+Checking storage logs chunk /Users/jonathan.andersson/Programming/zksync-era/artifacts/storage_logs_snapshots/snapshot_l1_batch_24_storage_logs_part_0008.proto.gzip
+Decompressed chunk has 827 logs
+Checked random 66 logs in the chunk
+Checking storage logs chunk /Users/jonathan.andersson/Programming/zksync-era/artifacts/storage_logs_snapshots/snapshot_l1_batch_24_storage_logs_part_0009.proto.gzip
+Decompressed chunk has 783 logs
+Checked random 73 logs in the chunk
+    ✔ validate snapshot (85ms)
+Dropping DB for dal core/lib/dal...
+Using localhost database -- postgres://postgres:notsecurepassword@localhost/zksync_local_ext_node
+Applied 20211026134308/migrate init (67.220708ms)
+Applied 20220120160234/migrate add tx execution info (1.802333ms)
+Applied 20220127113853/migrate tx received at index (3.737291ms)
+Applied 20220204131627/migrate add merkle root (1.9395ms)
+Applied 20220204223302/migrate transactions new mempool (2.201916ms)
+Applied 20220304160112/migrate drop events indices (3.885875ms)
+Applied 20220308124416/migrate add l2 to l1 communication (906.584µs)
+Applied 20220315095541/migrate txs priority id (1.760333ms)
+Applied 20220315144416/migrate remove tx valid in (856.167µs)
+Applied 20220321131756/migrate change events loc index (2.409583ms)
+Applied 20220325153146/migrate remove events id (3.2675ms)
+Applied 20220401114554/migrate storage tables migration (2.982959ms)
+Applied 20220404102332/migrate eth tx index (3.183625ms)
+Applied 20220406085905/migrate eth tx has failed status (1.8305ms)
+Applied 20220412142956/migrate add block hash index (1.990667ms)
+Applied 20220421125432/migrate drop to porter authorized (2.547542ms)
+Applied 20220504154136/migrate remove nonce gaps (964.333µs)
+Applied 20220509214600/migrate using base fee and priority fee (990.417µs)
+Applied 20220517135000/migrate add contract address column (1.806125ms)
+Applied 20220519101248/migrate btree events indices (5.302375ms)
+Applied 20220519103453/migrate in mempool (1.886167ms)
+Applied 20220519150925/migrate eth sender refactor (5.165625ms)
+Applied 20220519201431/migrate change block commitment model (853.208µs)
+Applied 20220527103820/migrate block number tx index indices (2.644375ms)
+Applied 20220601105448/migrate contract verification (5.767083ms)
+Applied 20220610121550/migrate add predicted gas columns (1.52975ms)
+Applied 20220611134715/migrate token-bridging (3.886042ms)
+Applied 20220621103309/migrate contract verification compilation errors (1.029416ms)
+Applied 20220630134601/migrate track l1 block number for priority ops (1.056584ms)
+Applied 20220704121755/migrate witness inputs (4.076791ms)
+Applied 20220705133822/migrate add value column (1.336583ms)
+Applied 20220707151034/migrate storage logs dedup (4.77775ms)
+Applied 20220708093726/migrate make-type-not-null (1.783708ms)
+Applied 20220711132020/migrate save initial bootloader content (1.085208ms)
+Applied 20220712073626/migrate add columns to witness inputs (1.06675ms)
+Applied 20220712093408/migrate add used contracts to blocks (2.048417ms)
+Applied 20220713090226/migrate remove-priority-mode (798.709µs)
+Applied 20220729125750/migrate add-contract-verification-started-at (818.666µs)
+Applied 20220801131413/migrate add paymaster data (1.675584ms)
+Applied 20220807172230/migrate block metadata (1.290125ms)
+Applied 20220815130828/migrate support eip1559 (1.520084ms)
+Applied 20220816141002/migrate add prover jobs (4.53425ms)
+Applied 20220826100615/migrate save block ergs per pubdata limit (901.666µs)
+Applied 20220827110416/migrate miniblocks (15.036834ms)
+Applied 20220902115015/migrate add-solc-version-to-contract-verifier (1.112416ms)
+Applied 20220902124458/migrate add time taken column in witness inputs (835.208µs)
+Applied 20220902190932/migrate add processing started at to witness inputs.sql (850.042µs)
+Applied 20220904161256/migrate add time taken column in prover jobs (1.58975ms)
+Applied 20220908094615/migrate add error field to queues (874.75µs)
+Applied 20220908103955/migrate verifier-compilers-versions (4.759791ms)
+Applied 20220908145203/migrate remove-redundant-fields (1.095916ms)
+Applied 20220914102048/migrate unique-blocknumber-for-witnesses (2.00325ms)
+Applied 20220915125943/migrate l1 batch tx number (1.310917ms)
+Applied 20220930085018/migrate add proof aggregations (6.361042ms)
+Applied 20221001090302/migrate add proof result (947.917µs)
+Applied 20221001131821/migrate add static artifact storage (14.9855ms)
+Applied 20221002190817/migrate add circuit id to proofs (17.639583ms)
+Applied 20221003090515/migrate add-commitment-hash-fields (23.714334ms)
+Applied 20221004114549/migrate add scheduler jobs table (18.006833ms)
+Applied 20221007085909/migrate add-attempts-for-jobs (9.554167ms)
+Applied 20221010145858/migrate remove ergs per code decommittment word (3.921959ms)
+Applied 20221013104735/migrate add aggregation result coords to scheduler jobs (1.184875ms)
+Applied 20221018114513/migrate verification-requests-panic-messages (799.708µs)
+Applied 20221019112725/migrate l2 to l1 logs table (6.601375ms)
+Applied 20221031110209/migrate miniblocks-hash-index (1.838292ms)
+Applied 20221103104136/migrate add-signed-raw-tx (1.08725ms)
+Applied 20221108190838/migrate set-primary-keys (5.264916ms)
+Applied 20221109094807/migrate block-skip-proof (944.416µs)
+Applied 20221110094012/migrate add merkel tree paths blob url in witness inputs (1.027375ms)
+Applied 20221110094252/migrate add basic circuits and inputs blob url in leaf aggregation witness jobs (1.003458ms)
+Applied 20221110094339/migrate add leaf layer subques and aggregation output blob url in node aggregation witness jobs (1.246459ms)
+Applied 20221110094730/migrate add scheduler witness and final node aggregations blob url in scheduler witness jobs (2.14375ms)
+Applied 20221110095052/migrate add circuit input blob url column in prover jobs (947.375µs)
+Applied 20221202102801/migrate events-tx-initiator-address (3.708541ms)
+Applied 20221215085757/migrate add composite index to prover jobs (1.920583ms)
+Applied 20221215094205/migrate prover-job-identity (1.115334ms)
+Applied 20221222120017/migrate add index to reduce load in prover jobs (2.42825ms)
+Applied 20221227165603/migrate fee model (1.525083ms)
+Applied 20221229154428/migrate add-bootloader-aa-code-hash (1.159291ms)
+Applied 20230104104142/migrate add gpu prover queue table (3.937959ms)
+Applied 20230105122559/migrate protective reads (5.537083ms)
+Applied 20230105160906/migrate remove contracts null restriction (1.552833ms)
+Applied 20230109123145/migrate add blob cleanup status column to tables with blobs (2.079ms)
+Applied 20230109123703/migrate add blob cleanup status index for tables with blobs (6.327ms)
+Applied 20230111122457/migrate refactor contracts verification info (4.489834ms)
+Applied 20230112111801/migrate initial writes (5.6375ms)
+Applied 20230113113154/migrate add storage logs index (2.6485ms)
+Applied 20230117123627/migrate add queue capacity and free slots in gpu prover queue (1.184916ms)
+Applied 20230119123216/migrate drop null constraint gpu prover queue (1.059083ms)
+Applied 20230119182427/migrate l1 refunds (1.260708ms)
+Applied 20230202142858/migrate ergs to gas (1.276792ms)
+Applied 20230203102247/migrate add specialized prover group id in gpu prover queue (1.051334ms)
+Applied 20230215114053/migrate verification-request-is-system (1.015042ms)
+Applied 20230221112209/migrate add region column in gpu prover queue (1.780583ms)
+Applied 20230221113734/migrate adjust primary key in gpu prover queue (2.740125ms)
+Applied 20230228095320/migrate add circuit type status index in prover jobs (1.851791ms)
+Applied 20230320195412/migrate calls (3.871417ms)
+Applied 20230323110438/migrate add zone num gpu column in gpu prover queue (1.301166ms)
+Applied 20230323111121/migrate add zone in pk of gpu prover queue (2.182125ms)
+Applied 20230327173626/migrate eth-txs-history-tx-hash-index (3.584416ms)
+Applied 20230328110644/migrate drop and recreate gpu prover queue (9.309125ms)
+Applied 20230420104112/migrate add events address-block-index index (2.003792ms)
+Applied 20230424115322/migrate drop stoarge logs dedup table (2.999792ms)
+Applied 20230427083744/migrate protocol versions table (4.776417ms)
+Applied 20230525091429/migrate events transfer indices for explorer (2.937708ms)
+Applied 20230530091756/migrate add system version in witness and prover related tables (2.652958ms)
+Applied 20230607131138/migrate create witness inputs fri table (4.970625ms)
+Applied 20230607132716/migrate create prover jobs fri table (5.253417ms)
+Applied 20230609133146/migrate drop contract sources (2.726375ms)
+Applied 20230612111554/migrate drop unnecessary foreign keys post prover migration (1.730291ms)
+Applied 20230612173621/migrate fix-storage-logs-contract-address-tx-hash-idx (2.661334ms)
+Applied 20230614081056/migrate add missing indices (18.67ms)
+Applied 20230615142357/migrate drop l1 batches constraint from witness inputs fri (1.475042ms)
+Applied 20230616131252/migrate add leaf aggregation witness jobs fri (4.74275ms)
+Applied 20230619113310/migrate add protocol version index in prover jobs (15.406958ms)
+Applied 20230619132736/migrate add node aggregation witness jobs fri table (4.920292ms)
+Applied 20230622100931/migrate add number of basic circuits in leaf agg jobs fri table (1.078167ms)
+Applied 20230622142030/migrate add depth in prover jobs fri table (1.197834ms)
+Applied 20230626060855/migrate vyper verification (7.6475ms)
+Applied 20230626103610/migrate create unique index for leaf node prover fri tables (4.564166ms)
+Applied 20230627123428/migrate add scheduler dependency tracker table (13.921041ms)
+Applied 20230627131556/migrate create scheduler witness jobs fri table (5.044083ms)
+Applied 20230628091834/migrate add attempts in scheduler witness jobs fri table (1.257208ms)
+Applied 20230628113801/migrate add is node final proof column in prover jobs fri table (887.875µs)
+Applied 20230628120840/migrate add number of dependency column in node aggregations fri table (1.041833ms)
+Applied 20230628184614/migrate update scheduler dependency tracker fri to remove autoincrement sequence (7.383709ms)
+Applied 20230630083308/migrate add indices for new prover related tables (10.668083ms)
+Applied 20230630095614/migrate add proof blob url drop proof from prover jobs fri (2.243875ms)
+Applied 20230706080351/migrate add-enumeration-indices (2.621333ms)
+Applied 20230717182755/migrate pending tx index (2.8225ms)
+Applied 20230807152355/migrate virtual blocks (1.071708ms)
+Applied 20230810090211/migrate add proof generation details table (5.2775ms)
+Applied 20230816123036/migrate create table gpu prover queue fri (5.080458ms)
+Applied 20230817101508/migrate add index for gpu prover queue fri (2.406ms)
+Applied 20230822133227/migrate prover protocol versions (13.463041ms)
+Applied 20230824105133/migrate drop protocol versions tx fk (1.092917ms)
+Applied 20230825103341/migrate fix prover jobs protocol version index (16.113917ms)
+Applied 20230831110448/migrate add prover fri protocol versions table (5.134334ms)
+Applied 20230906070159/migrate miniblocks pending batch index (2.085458ms)
+Applied 20230906090541/migrate add proof compression table (4.688875ms)
+Applied 20230911090548/migrate add index for proof compressor table (3.348875ms)
+Applied 20230913092159/migrate update prover fri index to include protocol version (7.179917ms)
+Applied 20230914150834/migrate enum-indices-not-null (1.603708ms)
+Applied 20230918093855/migrate remove not null constraint fri proof blob url proof compression jobs fri (831.167µs)
+Applied 20230918134637/migrate add picked by column to prover fri related tables (1.207375ms)
+Applied 20231009073918/migrate drop-prover jobs fri l1 batch number fkey (1.208667ms)
+Applied 20231013085524/migrate boojum-block-commitments (9.161833ms)
+Applied 20231013163109/migrate create snapshots table (4.667458ms)
+Applied 20231018205126/migrate l1 batches boojum fields (1.219208ms)
+Applied 20231019125310/migrate storage-refunds (1.3055ms)
+Applied 20231024052911/migrate add basic witness input producer jobs table (7.807125ms)
+Applied 20231027074517/migrate add missing index for fri prover tables (5.886792ms)
+Applied 20231102144901/migrate add consensus fields for miniblocks (1.162833ms)
+Applied 20231117091340/migrate add-index-for-prover-jobs-fri-queueing (2.372583ms)
+Applied 20231128123456/migrate create consensus replica state table (4.629292ms)
+Applied 20231208134254/migrate drop old witness generation related tables (8.653833ms)
+Applied 20231212121822/migrate add miniblocks fee account address (1.514792ms)
+Applied 20231213192041/migrate snapshot-recovery (4.737959ms)
+Applied 20231225083442/migrate add-pub-data-input (1.746834ms)
+Applied 20231229181653/migrate fair pubdata price (1.17075ms)
+Applied 20240103123456/migrate move consensus fields to new table (4.570542ms)
+Applied 20240103125908/migrate remove old prover subsystems (8.939583ms)
+Applied 20240104121833/migrate l1-batch-predicted-circuits (1.148625ms)
+Applied 20240110085604/migrate add-l1-batch-circuit-statistic (1.458416ms)
+Applied 20240112194527/migrate snapshots applier processed chunks format change (1.956791ms)
+Applied 20240126114931/migrate add-l1 batches-commitment-index (2.255583ms)
+Applied 20240129133815/migrate revert removing snapshot recovery columns (1.042083ms)
+Applied 20240130151508/migrate add extra fields to snapshot recovery (1.523167ms)
+Applied 20240131123456/migrate add consensus fields for miniblocks (1.065ms)
+Applied 20240202150009/migrate transaction batch index (5.392625ms)
+Applied 20240204153050/migrate add-miniblocks-l1-batch-index (2.1725ms)
+Applied 20240205123456/migrate add genesis to consensus replica state (931.334µs)
+Applied 20240221154502/migrate add-from-addr-to-eth-txs (1.009875ms)
+Applied 20240221155945/migrate add force evmla to contract verification req (987.666µs)
+Applied 20240226120530/migrate add support for eip4844 (1.576416ms)
+Applied 20240228142549/migrate eth txs add 4844 blob sidecar (1.887667ms)
+Applied 20240306155535/migrate remove obsolete indexes (1.648667ms)
+Applied 20240307135715/migrate events gin index (2.589125ms)
+    ✔ drop external node database (11554ms)
+    ✔ drop external node storage (936ms)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Request to EN health check server failed (connection refused)
+Received snapshot recovery health details {
+  factory_deps_recovered: true,
+  snapshot_l1_batch: 24,
+  snapshot_miniblock: 88,
+  storage_logs_chunk_count: 10,
+  storage_logs_chunks_left_to_process: 0,
+  tokens_recovered: true
+}
+Snapshot recovery is complete
+Received consistency checker health details {}
+Received consistency checker health details {}
+Received consistency checker health details {}
+Received consistency checker health details {}
+Received consistency checker health details { first_checked_batch: 25 }
+Received reorg detector health details { last_correct_l1_batch: 25, last_correct_miniblock: 90 }
+Received consistency checker health details { first_checked_batch: 25 }
+Received consistency checker health details { first_checked_batch: 25 }
+Received consistency checker health details { first_checked_batch: 25 }
+Received consistency checker health details { first_checked_batch: 25 }
+Received consistency checker health details { first_checked_batch: 25, last_checked_batch: 25 }
+    ✔ initialize external node (122321ms)
+Block number on EN: 90
+L1 batch number on EN: 25
+    ✔ check basic EN Web3 endpoints (20ms)
+Fetched tokens from EN [
+  {
+    l1_address: '0x5e6d086f5ec079adff4fb3774cdf3e8d6a34f7e9',
+    l2_address: '0x7b04cdfcc7b1cb5f212beeb0e55867c2554e3701',
+    metadata: { name: 'DAI', symbol: 'DAI', decimals: 18 }
+  },
+  {
+    l1_address: '0x0000000000000000000000000000000000000000',
+    l2_address: '0x0000000000000000000000000000000000000000',
+    metadata: { name: 'Ether', symbol: 'ETH', decimals: 18 }
+  }
+]
+Fetched tokens from main node [
+  {
+    l1_address: '0x5e6d086f5ec079adff4fb3774cdf3e8d6a34f7e9',
+    l2_address: '0x7b04cdfcc7b1cb5f212beeb0e55867c2554e3701',
+    metadata: { name: 'DAI', symbol: 'DAI', decimals: 18 }
+  },
+  {
+    l1_address: '0x0000000000000000000000000000000000000000',
+    l2_address: '0x0000000000000000000000000000000000000000',
+    metadata: { name: 'Ether', symbol: 'ETH', decimals: 18 }
+  }
+]
+    ✔ check tokens on EN (12ms)
+
+
+  7 passing (2m)
+
+Done in 140.43s.

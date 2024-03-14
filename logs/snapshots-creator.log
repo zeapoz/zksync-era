@@ -1,0 +1,40 @@
+[2m2024-03-14T17:43:22.375269Z[0m [32m INFO[0m [2msnapshots_creator[0m[2m:[0m Starting snapshots creator
+[2m2024-03-14T17:43:22.397246Z[0m [32m INFO[0m [2mzksync_dal::connection[0m[2m:[0m Created DB pool with parameters ConnectionPoolBuilder { max_size: 25, acquire_timeout: 30s, statement_timeout: None }
+[2m2024-03-14T17:43:22.413129Z[0m [32m INFO[0m [2mzksync_dal::connection[0m[2m:[0m Created DB pool with parameters ConnectionPoolBuilder { max_size: 1, acquire_timeout: 30s, statement_timeout: None }
+[2m2024-03-14T17:43:22.413190Z[0m [32m INFO[0m [2msnapshots_creator::creator[0m[2m:[0m Starting snapshot creator with object store FileBackedObjectStore { base_dir: "artifacts" } and config SnapshotsCreatorConfig { storage_logs_chunk_size: 1000000, concurrent_queries_count: 25 }
+[2m2024-03-14T17:43:22.424062Z[0m [32m INFO[0m [2msnapshots_creator::creator[0m[2m:[0m Selected storage logs chunking for L1 batch 24: 10 chunks of expected size 1000000
+[2m2024-03-14T17:43:22.438683Z[0m [32m INFO[0m [2msnapshots_creator::creator[0m[2m:[0m Creating snapshot for storage logs up to miniblock 88, L1 batch 24
+[2m2024-03-14T17:43:22.439080Z[0m [32m INFO[0m [2msnapshots_creator::creator[0m[2m:[0m Loading factory deps from Postgres...
+[2m2024-03-14T17:43:22.443270Z[0m [32m INFO[0m [2msnapshots_creator::creator[0m[2m:[0m Loaded 33 factory deps in 4.16775ms
+[2m2024-03-14T17:43:22.443293Z[0m [32m INFO[0m [2msnapshots_creator::creator[0m[2m:[0m Saving factory deps to GCS...
+[2m2024-03-14T17:43:22.470849Z[0m [32m INFO[0m [2msnapshots_creator::creator[0m[2m:[0m Saved 33 factory deps in 27.541333ms to location: artifacts/storage_logs_snapshots/snapshot_l1_batch_24_factory_deps.proto.gzip
+[2m2024-03-14T17:43:22.473921Z[0m [34mDEBUG[0m [2mvise_exporter::exporter[0m[2m:[0m Scraped metrics using `metrics` façade in 69.792µs (scraped size: 0B) [3mlatency_sec[0m[2m=[0m6.9792e-5 [3mscraped_size[0m[2m=[0m0
+[2m2024-03-14T17:43:22.474384Z[0m [34mDEBUG[0m [2mvise_exporter::exporter[0m[2m:[0m Scraped metrics using `vise` façade in 442.125µs (scraped size: 15990B) [3mlatency_sec[0m[2m=[0m0.000442125 [3mscraped_size[0m[2m=[0m15990
+[2m2024-03-14T17:43:22.474634Z[0m [31mERROR[0m [2mvise_exporter::exporter[0m[2m:[0m Error submitting metrics to Prometheus push gateway [3merr[0m[2m=[0merror trying to connect: tcp connect error: Connection refused (os error 61) [3mendpoint[0m[2m=[0mhttp://127.0.0.1:9091/metrics/job/zksync-pushgateway/namespace/UNKNOWN_NAMESPACE/pod/UNKNOWN_POD
+[2m2024-03-14T17:43:22.493380Z[0m [32m INFO[0m [2msnapshots_creator::creator[0m[2m:[0m Loaded chunk 0 (831 logs) from Postgres in 18.767875ms
+[2m2024-03-14T17:43:22.495174Z[0m [32m INFO[0m [2msnapshots_creator::creator[0m[2m:[0m Loaded chunk 1 (874 logs) from Postgres in 20.527709ms
+[2m2024-03-14T17:43:22.522380Z[0m [32m INFO[0m [2msnapshots_creator::creator[0m[2m:[0m Saved chunk 0 (overall progress 1/10) in 22.48975ms to location: artifacts/storage_logs_snapshots/snapshot_l1_batch_24_storage_logs_part_0000.proto.gzip
+[2m2024-03-14T17:43:22.526628Z[0m [32m INFO[0m [2msnapshots_creator::creator[0m[2m:[0m Saved chunk 1 (overall progress 2/10) in 20.731417ms to location: artifacts/storage_logs_snapshots/snapshot_l1_batch_24_storage_logs_part_0001.proto.gzip
+[2m2024-03-14T17:43:22.531766Z[0m [32m INFO[0m [2msnapshots_creator::creator[0m[2m:[0m Loaded chunk 6 (762 logs) from Postgres in 27.640917ms
+[2m2024-03-14T17:43:22.533466Z[0m [32m INFO[0m [2msnapshots_creator::creator[0m[2m:[0m Loaded chunk 2 (846 logs) from Postgres in 37.074375ms
+[2m2024-03-14T17:43:22.534774Z[0m [32m INFO[0m [2msnapshots_creator::creator[0m[2m:[0m Loaded chunk 3 (802 logs) from Postgres in 18.804083ms
+[2m2024-03-14T17:43:22.535882Z[0m [32m INFO[0m [2msnapshots_creator::creator[0m[2m:[0m Loaded chunk 4 (797 logs) from Postgres in 35.661875ms
+[2m2024-03-14T17:43:22.536986Z[0m [32m INFO[0m [2msnapshots_creator::creator[0m[2m:[0m Loaded chunk 5 (804 logs) from Postgres in 20.96675ms
+[2m2024-03-14T17:43:22.538177Z[0m [32m INFO[0m [2msnapshots_creator::creator[0m[2m:[0m Loaded chunk 7 (824 logs) from Postgres in 22.119583ms
+[2m2024-03-14T17:43:22.539338Z[0m [32m INFO[0m [2msnapshots_creator::creator[0m[2m:[0m Loaded chunk 8 (827 logs) from Postgres in 23.261125ms
+[2m2024-03-14T17:43:22.540767Z[0m [32m INFO[0m [2msnapshots_creator::creator[0m[2m:[0m Loaded chunk 9 (783 logs) from Postgres in 14.7505ms
+[2m2024-03-14T17:43:22.542103Z[0m [32m INFO[0m [2msnapshots_creator::creator[0m[2m:[0m Saved chunk 6 (overall progress 3/10) in 6.151041ms to location: artifacts/storage_logs_snapshots/snapshot_l1_batch_24_storage_logs_part_0006.proto.gzip
+[2m2024-03-14T17:43:22.542910Z[0m [32m INFO[0m [2msnapshots_creator::creator[0m[2m:[0m Saved chunk 2 (overall progress 4/10) in 8.181417ms to location: artifacts/storage_logs_snapshots/snapshot_l1_batch_24_storage_logs_part_0002.proto.gzip
+[2m2024-03-14T17:43:22.543713Z[0m [32m INFO[0m [2msnapshots_creator::creator[0m[2m:[0m Saved chunk 3 (overall progress 5/10) in 6.881292ms to location: artifacts/storage_logs_snapshots/snapshot_l1_batch_24_storage_logs_part_0003.proto.gzip
+[2m2024-03-14T17:43:22.544549Z[0m [32m INFO[0m [2msnapshots_creator::creator[0m[2m:[0m Saved chunk 4 (overall progress 6/10) in 5.774916ms to location: artifacts/storage_logs_snapshots/snapshot_l1_batch_24_storage_logs_part_0004.proto.gzip
+[2m2024-03-14T17:43:22.545317Z[0m [32m INFO[0m [2msnapshots_creator::creator[0m[2m:[0m Saved chunk 5 (overall progress 7/10) in 4.660417ms to location: artifacts/storage_logs_snapshots/snapshot_l1_batch_24_storage_logs_part_0005.proto.gzip
+[2m2024-03-14T17:43:22.546101Z[0m [32m INFO[0m [2msnapshots_creator::creator[0m[2m:[0m Saved chunk 7 (overall progress 8/10) in 3.501542ms to location: artifacts/storage_logs_snapshots/snapshot_l1_batch_24_storage_logs_part_0007.proto.gzip
+[2m2024-03-14T17:43:22.547951Z[0m [32m INFO[0m [2msnapshots_creator::creator[0m[2m:[0m Saved chunk 8 (overall progress 9/10) in 2.345625ms to location: artifacts/storage_logs_snapshots/snapshot_l1_batch_24_storage_logs_part_0008.proto.gzip
+[2m2024-03-14T17:43:22.548867Z[0m [32m INFO[0m [2msnapshots_creator::creator[0m[2m:[0m Saved chunk 9 (overall progress 10/10) in 958.667µs to location: artifacts/storage_logs_snapshots/snapshot_l1_batch_24_storage_logs_part_0009.proto.gzip
+[2m2024-03-14T17:43:22.548876Z[0m [32m INFO[0m [2msnapshots_creator::creator[0m[2m:[0m snapshot_generation_duration: 135.621125ms
+[2m2024-03-14T17:43:22.548880Z[0m [32m INFO[0m [2msnapshots_creator::creator[0m[2m:[0m snapshot_l1_batch: 24
+[2m2024-03-14T17:43:22.548882Z[0m [32m INFO[0m [2msnapshots_creator::creator[0m[2m:[0m storage_logs_chunks_count: 10
+[2m2024-03-14T17:43:22.548987Z[0m [32m INFO[0m [2msnapshots_creator[0m[2m:[0m Finished running snapshot creator!
+[2m2024-03-14T17:43:22.549001Z[0m [32m INFO[0m [2mvise_exporter::exporter[0m[2m:[0m Stop signal received, Prometheus metrics exporter is shutting down
+[2m2024-03-14T17:43:22.549010Z[0m [34mDEBUG[0m [2mvise_exporter::exporter[0m[2m:[0m Scraped metrics using `metrics` façade in 2.542µs (scraped size: 0B) [3mlatency_sec[0m[2m=[0m2.542e-6 [3mscraped_size[0m[2m=[0m0
+[2m2024-03-14T17:43:22.549219Z[0m [34mDEBUG[0m [2mvise_exporter::exporter[0m[2m:[0m Scraped metrics using `vise` façade in 203.583µs (scraped size: 19871B) [3mlatency_sec[0m[2m=[0m0.000203583 [3mscraped_size[0m[2m=[0m19871

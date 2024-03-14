@@ -1,0 +1,19 @@
+[2m2024-03-14T17:37:11.657493Z[0m [32m INFO[0m [2mzksync_server[0m[2m:[0m No sentry URL was provided
+[2m2024-03-14T17:37:11.698462Z[0m [32m INFO[0m [2mzksync_dal::connection[0m[2m:[0m Created DB pool with parameters ConnectionPoolBuilder { max_size: 1, acquire_timeout: 30s, statement_timeout: None }
+[2m2024-03-14T17:37:12.183206Z[0m [32m INFO[0m [2mzksync_core::genesis[0m[2m:[0m running regenesis
+[2m2024-03-14T17:37:12.227195Z[0m [32m INFO[0m [2mzksync_core::genesis[0m[2m:[0m chain_schema_genesis is complete
+[2m2024-03-14T17:37:12.227263Z[0m [34mDEBUG[0m [2mzksync_core::metadata_calculator::helpers[0m[2m:[0m Loading storage logs data for L1 batch #0
+[2m2024-03-14T17:37:12.228227Z[0m [34mDEBUG[0m [2mzksync_core::metadata_calculator::metrics[0m[2m:[0m Metadata calculator stage `LoadL1BatchHeader` completed in 788.917µs
+[2m2024-03-14T17:37:12.229516Z[0m [34mDEBUG[0m [2mzksync_core::metadata_calculator::metrics[0m[2m:[0m Metadata calculator stage `LoadProtectiveReads` with 0 records completed in 1.285375ms
+[2m2024-03-14T17:37:12.230433Z[0m [34mDEBUG[0m [2mzksync_core::metadata_calculator::metrics[0m[2m:[0m Metadata calculator stage `LoadTouchedSlots` with 25 records completed in 889.042µs
+[2m2024-03-14T17:37:12.231082Z[0m [34mDEBUG[0m [2mzksync_core::metadata_calculator::metrics[0m[2m:[0m Metadata calculator stage `LoadLeafIndices` with 25 records completed in 640.833µs
+[2m2024-03-14T17:37:12.231086Z[0m [34mDEBUG[0m [2mzksync_core::metadata_calculator::helpers[0m[2m:[0m Made touched slots disjoint with protective reads; remaining touched slots: 25
+[2m2024-03-14T17:37:12.231104Z[0m [34mDEBUG[0m [2mzksync_core::metadata_calculator::metrics[0m[2m:[0m Metadata calculator stage `LoadChanges` completed in 3.686917ms
+[2m2024-03-14T17:37:12.231177Z[0m [32m INFO[0m [2mzksync_merkle_tree::domain[0m[2m:[0m Creating Merkle tree for genesis batch with 25 writes
+[2m2024-03-14T17:37:12.231922Z[0m [32m INFO[0m [2mzksync_merkle_tree::domain[0m[2m:[0m Processed genesis batch; root hash is 0x436c…74cd, 25 leaves in total
+[2m2024-03-14T17:37:12.235522Z[0m [32m INFO[0m [2mzksync_core::genesis[0m[2m:[0m operations_schema_genesis is complete
+CONTRACTS_GENESIS_ROOT=0x436cf80dd02a7e1a1df65be6ec9ea231ccec97c44f4c8c9cd2aa26c2feb074cd
+CONTRACTS_GENESIS_BATCH_COMMITMENT=0x938016208176c5a49d47c8aa582b5d18afc4f159dfa099087770e0796948fd1a
+CONTRACTS_GENESIS_ROLLUP_LEAF_INDEX=26
+CHAIN_STATE_KEEPER_BOOTLOADER_HASH=0x010007ede999d096c84553fb514d3d6ca76fbf39789dda76bfeda9f3ae06236e
+CHAIN_STATE_KEEPER_DEFAULT_AA_HASH=0x0100055b041eb28aff6e3a6e0f37c31fd053fc9ef142683b05e5f0aee6934066
