@@ -84,11 +84,12 @@ impl InitializeStorage for ExternalNodeSnapshotRecovery {
     }
 
     async fn is_initialized(&self) -> anyhow::Result<bool> {
-        let mut storage = self.pool.connection_tagged("en").await?;
-        let completed = matches!(
-            SnapshotsApplierTask::is_recovery_completed(&mut storage, &self.client).await?,
-            RecoveryCompletionStatus::Completed
-        );
-        Ok(completed)
+        // let mut storage = self.pool.connection_tagged("en").await?;
+        Ok(false)
+        // let completed = matches!(
+        //     SnapshotsApplierTask::is_recovery_completed(&mut storage, &self.client).await?,
+        //     RecoveryCompletionStatus::Completed
+        // );
+        // Ok(completed)
     }
 }
